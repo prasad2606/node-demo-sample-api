@@ -59,44 +59,44 @@ app.get('/api/status/db', function (req, res) {
 });
 
 //GET ALL PRODUCTS - To retrieve all all products call this API ... URL/api/getproducts
-app.get('/api/getproducts',(req, res) => {
-let sql = "SELECT * FROM XXIBM_PRODUCT_SKU";  
-console.log(sql);
-  let query = mysqlClient.query(sql, (err, results) => {
-    if(err) throw err;
-    res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
-  });
-});
+//app.get('/api/getproducts',(req, res) => {
+//let sql = "SELECT * FROM XXIBM_PRODUCT_SKU";  
+//console.log(sql);
+//  let query = mysqlClient.query(sql, (err, results) => {
+//    if(err) throw err;
+//    res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
+//  });
+//});
 
 //GET A PRODUCT by DESCRIPTION ... To retrieve all all products call this API ... URL/api/getproducts/'Description'
-app.get('/api/getproducts/desc/:desc',(req, res) => {
-  let sql = "SELECT * FROM XXIBM_PRODUCT_SKU WHERE DESCRIPTION LIKE '%" + req.params.desc + "%'";
-  console.log(sql);
-  let query = mysqlClient.query(sql, (err, results) => {
-    if(err) throw err;
-    res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
-  });
-});
+//app.get('/api/getproducts/desc/:desc',(req, res) => {
+//  let sql = "SELECT * FROM XXIBM_PRODUCT_SKU WHERE DESCRIPTION LIKE '%" + req.params.desc + "%'";
+//  console.log(sql);
+ // let query = mysqlClient.query(sql, (err, results) => {
+ //   if(err) throw err;
+ //   res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
+ // });
+//});
 
 //GET A PRODUCT by PRODUCT_ID ... To retrieve all all products call this API ... URL/api/getproducts/'Product_id'
-app.get('/api/getproducts/id/:id',(req, res) => {
-  let sql = "SELECT * FROM XXIBM_PRODUCT_SKU WHERE ITEM_NUMBER="+req.params.id;
-  console.log(sql);
-  let query = mysqlClient.query(sql, (err, results) => {
-    if(err) throw err;
-    res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
-  });
-});
+//app.get('/api/getproducts/id/:id',(req, res) => {
+//  let sql = "SELECT * FROM XXIBM_PRODUCT_SKU WHERE ITEM_NUMBER="+req.params.id;
+//  console.log(sql);
+//  let query = mysqlClient.query(sql, (err, results) => {
+ //   if(err) throw err;
+  //  res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
+  //});
+//});
 
 //GET PRODUCT PRICE by PRODUCT_ID ... To retrieve product price call this API ... URL/api/getproducts/price/'Product_id'
-app.get('/api/getproducts/price/:id',(req, res) => {
-  let sql = "SELECT ITEM_NUMBER,LIST_PRICE FROM XXIBM_PRODUCT_PRICING WHERE ITEM_NUMBER="+req.params.id;
-  console.log(sql);
-  let query = mysqlClient.query(sql, (err, results) => {
-    if(err) throw err;
-    res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
-  });
-});
+//app.get('/api/getproducts/price/:id',(req, res) => {
+ // let sql = "SELECT ITEM_NUMBER,LIST_PRICE FROM XXIBM_PRODUCT_PRICING WHERE ITEM_NUMBER="+req.params.id;
+  //console.log(sql);
+  //let query = mysqlClient.query(sql, (err, results) => {
+  //  if(err) throw err;
+   // res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
+  //});
+//});
 
 // set port
 app.listen(port, ip);
