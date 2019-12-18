@@ -59,14 +59,14 @@ app.get('/api/status/db', function (req, res) {
 });
 
 //GET ALL PRODUCTS - To retrieve all all products call this API ... URL/api/getproducts
-//app.get('/api/getproducts',(req, res) => {
-//let sql = "SELECT * FROM XXIBM_PRODUCT_SKU";  
-//console.log(sql);
-//  let query = mysqlClient.query(sql, (err, results) => {
-//    if(err) throw err;
-//    res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
-//  });
-//});
+app.get('/api/getproducts',(req, res) => {
+let sql = "SELECT * FROM XXIBM_PRODUCT_SKU";  
+console.log(sql);
+  let query = mysqlClient.query(sql, (err, results) => {
+    if(err) throw err;
+    res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
+  });
+});
 
 //GET A PRODUCT by DESCRIPTION ... To retrieve all all products call this API ... URL/api/getproducts/'Description'
 //app.get('/api/getproducts/desc/:desc',(req, res) => {
